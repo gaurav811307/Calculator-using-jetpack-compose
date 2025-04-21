@@ -76,12 +76,12 @@ fun myApp() {
             Button(onClick = {
                 result.value = (value1.value.toDouble()+value2.value.toDouble()).toString()
             }) {
-                Text(text = "+")
+                Text(text = "ADD")
             }
             Button(onClick = {
                 result.value = (value1.value.toDouble()-value2.value.toDouble()).toString()
             }) {
-                Text(text = "-")
+                Text(text = "SUB")
             }
         }
         Row(modifier = Modifier.fillMaxWidth(),
@@ -89,18 +89,24 @@ fun myApp() {
             Button(onClick = {
                 result.value = (value1.value.toDouble()*value2.value.toDouble()).toString()
             }) {
-                Text(text = "*")
+                Text(text = "MULTI")
             }
             Button(onClick = {
                 result.value = (value1.value.toDouble()/value2.value.toDouble()).toString()
             }) {
-                Text(text = "/")
+                Text(text = "DIV")
             }
         }
 
         if (result.value.isNotEmpty())
         Text(text = "The Result is ${result.value}")
     }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+private fun demo() {
+    myApp()
 }
 
 
